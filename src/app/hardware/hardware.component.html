@@ -1,0 +1,6 @@
+<h2>Popis hardware-a</h2>
+<ul class="hardwares">
+  <li *ngFor="let hardware of hardwareList" routerLink="/detail/{{hardware.code}}">
+    <span class="badge">{{hardware.name}}</span>{{hardware.price}} EUR
+  </li>
+</ul>

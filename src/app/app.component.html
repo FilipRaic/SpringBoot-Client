@@ -1,11 +1,6 @@
 <h1>{{title}}</h1>
-<h2>Popis hardware-a</h2>
-<ul class="hardwares">
-  <li *ngFor="let hardware of hardwareList" (click)="onSelect(hardware)" [class.selected]="hardware === selectedHardware">
-    <span class="badge">{{hardware.name}}</span>{{hardware.price}} EUR
-  </li>
-</ul>
-
-<app-hardware-detail [hardware]="selectedHardware"></app-hardware-detail>
-<app-pricecheck [price]="selectedHardware?.price"></app-pricecheck>
+<nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/hardware">Hardware</a>
+</nav>
 <router-outlet></router-outlet>
