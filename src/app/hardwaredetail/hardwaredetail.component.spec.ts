@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HardwaredetailComponent } from './hardwaredetail.component';
+import { HardwareDetailComponent } from './hardwaredetail.component';
 
 describe('HardwaredetailComponent', () => {
-  let component: HardwaredetailComponent;
-  let fixture: ComponentFixture<HardwaredetailComponent>;
+  let component: HardwareDetailComponent;
+  let fixture: ComponentFixture<HardwareDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HardwaredetailComponent ]
+      declarations: [ HardwareDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HardwaredetailComponent);
+    fixture = TestBed.createComponent(HardwareDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

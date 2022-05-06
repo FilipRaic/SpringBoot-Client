@@ -1,6 +1,48 @@
-<h2>Popis hardware-a</h2>
-<ul class="hardwares">
-  <li *ngFor="let hardware of hardwareList" routerLink="/detail/{{hardware.code}}">
+<h2>Hardware list</h2>
+<ul class="hardwares" *ngFor="let hardware of hardwareList" >
+  <li routerLink="/detail/{{hardware.code}}">
     <span class="badge">{{hardware.name}}</span>{{hardware.price}} EUR
   </li>
+  <button (click)="delete(hardware.code);">Delete {{hardware.name}}</button>
 </ul>
+<div class="form">
+  <h3>Add new hardware</h3>
+  <div>
+    <label>Code:
+      <div>
+        <input #hardwareCode />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>Name:
+      <div>
+        <input #hardwareName />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>Type:
+      <div>
+        <input #hardwareType />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>Amount in stock:
+      <div>
+        <input type="number" #hardwareAmount />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>Price:
+      <div>
+        <input type="number" #hardwarePrice />
+      </div>
+    </label>
+  </div>
+  <button (click)="add(hardwareCode.value, hardwareName.value, hardwareType.value, +hardwareAmount.value, +hardwarePrice.value);">
+    Add hardware
+  </button>
+</div>

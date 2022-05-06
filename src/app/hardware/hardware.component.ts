@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from '../app-routing.module';
+import { elementAt } from 'rxjs';
 import { Hardware } from '../hardware';
 import { HardwareService } from '../hardware.service';
 
@@ -23,5 +22,33 @@ export class HardwareComponent implements OnInit {
   getHardwareList(): void {
     this.hardwareService.getHardwareList()
       .subscribe(hardwareList => this.hardwareList = hardwareList)
+  }
+
+  add(code: string, name: string, type: string, amount: number, price: number): void {
+    code = code.trim();
+    name = name.trim();
+    type = type.trim();
+
+    if (!code || !name || !type || !amount || !price) {
+      return;
+    }
+
+    this.hardwareService.addHardware({ code, name, type, amount, price } as Hardware)
+    .subscribe(_ => {
+      this.getHardwareList();
+    });
+  }
+
+  delete(code: string): void {
+    code = code.trim();
+
+    if (!code) {
+      return;
+    }
+
+    this.hardwareService.deleteHardware({ code } as Hardware)
+      .subscribe(_ => {
+        this.getHardwareList();
+      });
   }
 }
