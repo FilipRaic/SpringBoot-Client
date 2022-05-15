@@ -1,0 +1,16 @@
+<h3 *ngIf="reviewList?.length != 0">Reviews:</h3>
+<div>
+    <label>Review text:
+      <div>
+        <input type="string" #reviewText />
+      </div>
+    </label>
+  </div>
+  <button>
+    Check reviews
+  </button>
+<ul class="reviews" *ngFor="let review of reviewList" >
+    <li routerLink="/reviewDetail/{{review.title}}">
+      <span class="review">{{review.text}}</span> - {{review.rating}}/5
+    </li>
+</ul>

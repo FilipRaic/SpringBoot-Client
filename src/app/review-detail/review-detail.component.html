@@ -1,0 +1,9 @@
+<div *ngIf="review">
+    <h2>{{review.title}}</h2>
+    <p>{{review.text}}</p>
+    <h3>{{review.rating}}</h3>
+    <ul class="reviewHardware" *ngForOf="let hardware of review.hardware" >
+        <h2>{{}}</h2>
+    </ul>
+</div>
+  

@@ -13,5 +13,4 @@ export class PricecheckComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
