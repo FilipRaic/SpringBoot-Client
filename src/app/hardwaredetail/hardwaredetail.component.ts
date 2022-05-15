@@ -10,8 +10,7 @@ import { HardwareService } from '../hardware.service';
   styleUrls: ['./hardwaredetail.component.css']
 })
 export class HardwareDetailComponent implements OnInit {
-
-  @Input() hardware: Hardware | undefined
+  hardware: Hardware | undefined;
 
   constructor(
     private hardwareService: HardwareService,

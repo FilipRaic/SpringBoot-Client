@@ -1,4 +1,6 @@
 <div *ngIf="hardware">
   <h2>{{hardware.name}} - details</h2>
   <span>Price: </span>{{hardware.price}}<span> EUR</span>
+  <app-pricecheck [price]="hardware.price"></app-pricecheck>
+  <app-review></app-review>
 </div>

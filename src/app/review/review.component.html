@@ -1,0 +1,6 @@
+<h3 *ngIf="reviewList?.length != 0">Reviews for this hardware:</h3>
+<ul class="reviews" *ngFor="let review of reviewList" >
+    <li>
+      <span class="review">{{review.text}}</span> - {{review.rating}}/5
+    </li>
+</ul>
